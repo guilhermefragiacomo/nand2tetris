@@ -1,0 +1,15 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/1/And.hdl
+CHIP AndMuxOr {
+    IN a, b, sel;
+    OUT out;
+    
+    PARTS:
+    And(a=a, b=b, out=aAndb);
+    Or(a=a, b=b, out=aOrb);
+    Mux(a=aAndb, b=aOrb, sel=sel, out=out);
+    //And(a=sel, b=aOrb, out=selAndaOrb);
+    //Or(a=selAndaOrb, b=aAndb, out=out);
+}
